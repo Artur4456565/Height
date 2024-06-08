@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Конвертер Величин</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<style>
+		body{
+			margin-top:70px;
+			background-color:#333;
+			color:#fff;
+		}
+		.card-block{
+			padding:10px;
+
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<h1 class="display-3 text-center mb-2">Конвертер величин</h1>
+			<form>
+				<div class="form-group">
+					<input type="number" id="kmInput" placeholder="Введите километры" class="form-control form-control-lg">
+					
+				</div>
+			</form>
+			<div id="output">
+
+
+
+				<div class="card alert-warning mb-2">
+					<div class="card-block">
+						<h4>Метры:</h4>
+						<div id="metresOutput"></div>
+						
+					</div>
+					
+				</div>
+
+
+
+
+
+				<div class="card alert-primary mb-2">
+					<div class="card-block">
+						<h5>Сантиметры:</h5>
+						<div id="smOutput"></div>
+						
+					</div>
+					
+				</div>
+
+
+
+
+
+
+
+				<div class="card alert-success mb-2">
+					<div class="card-block">
+						<h6>Миллиметры:</h6>
+						<div id="mlOutput"></div>
+						
+					</div>
+					
+				</div>
+
+
+
+
+				
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+<script>
+	document.getElementById('output').style.visibility="hidden";
+	document.getElementById('kmInput').addEventListener('input', function(e){
+		document.getElementById('output').style.visibility="visible";
+     var km=e.target.value;
+     //console.log(km);
+     document.getElementById('metresOutput').innerHTML=km*1000;
+     document.getElementById('smOutput').innerHTML=km*100000;
+	 document.getElementById('mlOutput').innerHTML=km*1000000;
+})
+</script>
+</body>
+</html>
